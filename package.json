@@ -16,5 +16,8 @@
     "mongoose": "^6.0.10",
     "nodemon": "^2.0.13",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.1.0"
   }
 }
