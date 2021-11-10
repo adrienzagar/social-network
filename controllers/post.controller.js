@@ -6,7 +6,7 @@ module.exports.readPost = (req, res) => {
 	postModel.find((err, docs) => {
 		if (!err) res.send(docs);
 		else console.log("Error to get data : " + err);
-	});
+	}).sort({createdAt : -1});
 };
 module.exports.createPost = async (req, res) => {
 	const newPost = new postModel({
@@ -121,7 +121,7 @@ module.exports.unlikePost = async (req, res) => {
 
 module.exports.commentPost = (req, res) => {
 	if (!ObjectID.isValid(req.params.id))
-	  return res.status(400).send("ID unknown : " + req.params.id);
+		return res.status(400).send("ID unknown : " + req.params.id);
   
 	try {
 		return postModel.findByIdAndUpdate(
