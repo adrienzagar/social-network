@@ -1,11 +1,11 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 mongoose
-    .connect("mongodb+srv://" + process.env.DB_USER_PASS + "@cluster0.gmhqj.mongodb.net/test",
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        }
-    )
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.log("Failed to connect", err))
+	.connect("mongodb+srv://" + process.env.DB_USER_PASS + process.env.CLUSTER,
+		{
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		}s
+	)
+	.then(() => console.log("Connected to MongoDB"))
+	.catch((err) => console.log("Failed to connect", err));
